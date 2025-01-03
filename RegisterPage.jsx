@@ -8,7 +8,7 @@ import instance from "../services/axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const nav = useNavigate();
   const dispatch = useDispatch();
   const {
@@ -130,4 +130,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

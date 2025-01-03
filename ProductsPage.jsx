@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { fetchProducts } from "../redux/slices/productAction";
 import ProductCard from "../component/ProductCard";
 import { productFilterSelector, productSelector } from "../redux/selector";
-import { filterByCate, filterBySort } from "../redux/slices/productSlice";
+import { filterByCate } from "../redux/slices/productSlice";
 
 const ProductsPage = () => {
   const [cate, setCate] = useState("");
@@ -19,9 +19,7 @@ const ProductsPage = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const handleSortPrice = (value) => {
-    dispatch(filterBySort(value));
-  };
+  // const handleSortPrice = (value) => {};
 
   const filteredProducts = products
     .filter((product) =>
@@ -55,13 +53,13 @@ const ProductsPage = () => {
         <option value="T-shirt">T-shirt</option>
         <option value="jeans">Jean</option>
       </select>
-
+      {/* 
       <select name="" id="" onChange={(e) => handleSortPrice(e.target.value)}>
         <option value="upPrice">Giá Tăng Dần</option>
         <option value="dowPrice"> Giá Giảm Dần</option>
         <option value="sortAZ">sắp sếp A - Z</option>
         <option value="sortZA">sắp sếp Z - A</option>
-      </select>
+      </select> */}
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
